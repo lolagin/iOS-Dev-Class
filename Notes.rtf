@@ -1,0 +1,237 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww25400\viewh12900\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 DATE 5/5/14\
+Class 1x\
+\
+.h, and .m (.h = header and .m is the application file)\
+\
+repo, github.com/czelff/westminster-iOS\
+\
+Header File\
+Declare all public interfaces in .h\
+all public variables and properties\
+\
+Implementation file(.m)\
+logic for program goes here\
+private interfaces\
+private variables functions and protocols\
+imports the header file\
+\
+.pch\
+Precompiled header file\
+compiled prior any other file\
+considered global, every file within your application will see this\
+imports <> for library/external files, or "" for your own files\
+\
+Suggestion, program dash, good to have\
+\
+.plist Preference File\
+included plist file specifics default preferences for app:\
+Name below icon on home screen\
+version number\
+lost that can be added/removed\
+XML based\
+Can make custom plist\
+\
+Foundation includes all classes that begin with "NS"\
+Foundation deals primarily with data\
+\
+UIKit includes classes beginning with UI\
+Focuses on IOS specific User Interfaces\
+\
+main.m\
+first file that is executed\
+needs a main function\
+public static void main (string[] args)\
+Specifies the applications delegate, which file will handle entering/exiting the app\
+Don't touch it!\
+\
+appdelegate\
+inherites from ui responder\
+implements the uiapplicationdelegate protocol\
+\
+Properties,\
+in objective c we access all variables through getter/setter\
+automatically made if declared as property\
+nonatomic - 99% of the time, this what you want\
+	not thread safe\
+strong, weak, retain, assign, readonly,readwrite, copy, and more\
+use strong, means that this class "owns" that property\
+@property(nonatomic,strong) ClassType *propertyName;\
+\
+UIApplicationDelegate Methods\
+print to the console using slog\
+\
+Objective C Syntax\
+Acces proprettes via a dot-notation or bracket notation: self.window\
+Access function through bracket notation [self doSomething]\
+to be more concise, recommend using dot-notation whenever possible\
+[self.window functionOnTheWindow]\
+[[self window] functionOnTheWindow]\
+\
+bracket notation works on properties because technically it is also a function\
+\
+getter on right sid of = sign\
+UIWindow *window = self.window;\
+UIWindow*window = [self window]\
+Don't use get/set to name properties\
+\
+setter on lift side of a = sing\
+self.window = [[UIWindow alloc] init];\
+[self setWindow: [[UIWindow alloc] init]];\
+\
+fuction names interweave variables,\
+self-describing\
++(instancetype)dateWithTimeInterval;\
+(NSTimeInterval)seconds sinceDate:(NSDate *)date\
+\
+minus sign indicates instance function/method\
+plus sign indicates class function/method\
+also called static method\
+\
+return type is indicated within parentheses \
+\
+DATE	5/7/14\
+Class 2\
+\
+MVC Paradigm\
+\
+M=model, typically a data container, array, string, object. In ObjC models have functions where others are merely storage containers.\
+V=View, UIView, UIButton, UIslider, never interacts with data. Manages its own appearance as well as subview appearance. Handles user interaction\
+C=controller, Most often ViewController, Coordinates information between M & V\
+\
+UIViewController\
+controller that has a view as a property\
+\
+view controller access the view property, self.view\
+\
+iOS apps have one window.\
+Each iOS "screen" is represented by a UIViewController\
+MVC-MAssive View Controller, unfortunately lots of code goes here.\
+Good iOS devs understand these inside and out\
+\
+//////////\
+View controller lifecycle\
+alloc-enough memory is allocated for this object\
+	NSString myStr = @"hi"; -does alloc underneath\
+init- the name of the initialize method(constructor in java)\
+	String str = new String(); (Basically alloc init)\
+	ex. UIView view = [[UIView alloc] init], bad but similar to java = [UIView new];\
+loadView, sets up the self.view\
+viewDidLoad - after the view has been loaded into memory\
+viewWillAppear - before the view will appear on the screen\
+viewWillLayoutSubviews - before the view handles its subviews\
+viewDidLayoutSubviews - after the view handles its subviews\
+viewDidAppear - after the view has appeared to the user\
+\
+viewWillDisappear\
+viewDidDisappear\
+dealloc\
+//////\
+\
+Coordinate System\
+-each visual element is represented by 4 points, x, y, width, height\
+0,0 begins upper left\
+CGpoint - x,y\
+CGsize - width, height\
+CGRect - CGPoint + CGSize smashed together\
+frame - CGRect, position of the rectangle in its superviews coordinate system (access the frame of view: self.view.frame) Frames are relative to their parent frame, Frame within frame is based on initial frame, whether or not that is the main view or an already existing frame\
+bounds-CGRect, a rectangle within its own coordinate system.x,y, coordinates are always 0,0\
+center - CGPoint, center of the view in relation to its superviews coordinate system\
+\
+Laying out subviews\
+Two ways: tRaditional coordinates and auto layout\
+Traditional: using frame and bounds extensively\
+Auto Layout: set up "rules" that describe the size and position of a view, added in iOS6\
+\
+DATE 5/9/14\
+\
+Multiple View Controllers\
+\
+nearly every app has more than one view controller\
+UINavigationController -a controller that manages multiple view controllers\
+-----See Slides------\
+\
+Ditching Storyboards and Adding a Navigation Controller\
+\
+Orientation cascades down\
+project>window>navigation controller >view controller >child view controller\
+parent can decide whether or not to forward rotation events down to children\
+frame and center properties are now different\
+\
+There is no "correct" way to lay things out\
+\
+DATE 5/12/14\
+Objectve C Memory Pre-ARC\
+\
+Objective C does not have a garbage collector\
+developer managed memory themselves\
+each object maintains a retain count, when the count hits zero the object deallocates\
+as you "hand off" an object to another class, you "retain: the object adding 1 to the retain count\
+when the object isn't needed anymore you "release" the object\
+Pointers could continue to point to allocated memory rather than nil, resulting in app crashes\
+PURE HELL, Estimated that over 95% of iOS app crashes pre iOS5 were because of improper memory handling\
+\
+Automatic Reference Counting, iOS5\
+At build time, the compiler inserts retains/release calls where necessary\
+Having a string pointer "point" to the object increases its retain count by 1\
+local pointers are strong\
+weak pointers do not increase the retain count\
+when an object that either a strong or weaker pointer points to is allocated the pointer is set to nil\
+\
+MORE ARC\
+subview should technically e referenced in a view controller using weak pointers\
+the view controller shouldn't "own" the subviews, the VIEW does once added as a subview]\
+as of iOS6 a view condoler doesn't nil out its view on low memory conditions. Hence why it's fine for subview properties to be strong (fine in practice, wrong in theory)\
+\
+UITableViewController\
+A view controller whose view is a UITableView, not just a UIView\
+the table view is wired up to ask its view controller all sorts of information:  how many cells should be displayed,what should happen when a cell gets clicked, etc\
+This is a great class to learn from, that you probably won't use much in practice (it's a little limited)\
+UITableViewCell -the class for each item within a cell\
+indexpath-A section and row that defines the location of a cell\
+Cells are placed into a queue to be re-used when they go off the screen\
+when we want a new cell, we should attempt to dequeue a cell first, then alloc/init if there's none available\
+cellForRowAtIndexPath - build/configure each cell\
+numberOfRowsInSection - how many cells\
+\
+UTableViewController\
+\
+DATE 5/14/14\
+\
+table view\
+needs cellForRow, numberOfRows,didSelect Row\
+\
+Building our own UITableViewController\
+UITableViewController is not flexible\
+\
+Protocols\
+similar to implements in java, we call it conforming\
+conforming to a protocol is like signing a contract saying you'll have theses methods within your object's definition\
+\
+UITableView Protocols\
+UITableView has two related protocols\
+UITableViewDataSource-by conforming to this protocol you agree to provide methods to give the table view data:numberOfRows\'85cellForRow\
+The table view data source is set through a property called datasource\
+UITableViewDelegate - by conforming to this you provide methods for, didSelectRow,HeightForRow,ViewForHeader\
+the table view's delegate is set through a property called delegate\
+\
+Delegates\
+This is the class you'll go to to ask questions or to get answers\
+UIApplicationDelegate-Our appDelegate class conformed to this, so it was asked questions(via functions)\
+"Task-Runner" model - Keep coming back to delegate for info\
+I delegAte a task to you("Tableview, go!") and you ask your delegate any questions necessary(How many rows do I have?)\
+dataSource & delegate properties are weak, not strong\'85why?\
+LEt's see what would happen if it were strong\
+table view and controller would both be strong, wouldn't be able to kill each other due to both be strong properties of the other\
+make all protocol-conforming properties weak to prevent the retain cycle\
+\
+NSDictionary\
+Similar to Hash-Maps in Java\
+Unordered collection of Data\
+Key-Value pairing\
+JSON(Javascript Object Notation) looks nearly identical, so dictionaries will be heavily used when we try our hand at networking}
