@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		538C7F5B192980EF0023F428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5A192980EF0023F428 /* Foundation.framework */; };
+		538C7F5D192980EF0023F428 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5C192980EF0023F428 /* CoreGraphics.framework */; };
+		538C7F5F192980EF0023F428 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5E192980EF0023F428 /* UIKit.framework */; };
+		538C7F65192980EF0023F428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538C7F63192980EF0023F428 /* InfoPlist.strings */; };
+		538C7F67192980EF0023F428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F66192980EF0023F428 /* main.m */; };
+		538C7F6B192980EF0023F428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F6A192980EF0023F428 /* AppDelegate.m */; };
+		538C7F6D192980EF0023F428 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 538C7F6C192980EF0023F428 /* Images.xcassets */; };
+		538C7F74192980EF0023F428 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F73192980EF0023F428 /* XCTest.framework */; };
+		538C7F75192980EF0023F428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5A192980EF0023F428 /* Foundation.framework */; };
+		538C7F76192980EF0023F428 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5E192980EF0023F428 /* UIKit.framework */; };
+		538C7F7E192980EF0023F428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538C7F7C192980EF0023F428 /* InfoPlist.strings */; };
+		538C7F80192980EF0023F428 /* iMorseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F7F192980EF0023F428 /* iMorseTests.m */; };
+		538C7F8B192984DD0023F428 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8A192984DD0023F428 /* HomeViewController.m */; };
+		538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		538C7F77192980EF0023F428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 538C7F4F192980EF0023F428 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 538C7F56192980EF0023F428;
+			remoteInfo = iMorse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		538C7F57192980EF0023F428 /* iMorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		538C7F5A192980EF0023F428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		538C7F5C192980EF0023F428 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		538C7F5E192980EF0023F428 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		538C7F62192980EF0023F428 /* iMorse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMorse-Info.plist"; sourceTree = "<group>"; };
+		538C7F64192980EF0023F428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		538C7F66192980EF0023F428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		538C7F68192980EF0023F428 /* iMorse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMorse-Prefix.pch"; sourceTree = "<group>"; };
+		538C7F69192980EF0023F428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		538C7F6A192980EF0023F428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		538C7F6C192980EF0023F428 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		538C7F72192980EF0023F428 /* iMorseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMorseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		538C7F73192980EF0023F428 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		538C7F7B192980EF0023F428 /* iMorseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMorseTests-Info.plist"; sourceTree = "<group>"; };
+		538C7F7D192980EF0023F428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		538C7F7F192980EF0023F428 /* iMorseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMorseTests.m; sourceTree = "<group>"; };
+		538C7F89192984DD0023F428 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		538C7F8A192984DD0023F428 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickChatTableViewController.h; sourceTree = "<group>"; };
+		538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickChatTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		538C7F54192980EF0023F428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F5D192980EF0023F428 /* CoreGraphics.framework in Frameworks */,
+				538C7F5F192980EF0023F428 /* UIKit.framework in Frameworks */,
+				538C7F5B192980EF0023F428 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538C7F6F192980EF0023F428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F74192980EF0023F428 /* XCTest.framework in Frameworks */,
+				538C7F76192980EF0023F428 /* UIKit.framework in Frameworks */,
+				538C7F75192980EF0023F428 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		538C7F4E192980EF0023F428 = {
+			isa = PBXGroup;
+			children = (
+				538C7F60192980EF0023F428 /* iMorse */,
+				538C7F79192980EF0023F428 /* iMorseTests */,
+				538C7F59192980EF0023F428 /* Frameworks */,
+				538C7F58192980EF0023F428 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		538C7F58192980EF0023F428 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F57192980EF0023F428 /* iMorse.app */,
+				538C7F72192980EF0023F428 /* iMorseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		538C7F59192980EF0023F428 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F5A192980EF0023F428 /* Foundation.framework */,
+				538C7F5C192980EF0023F428 /* CoreGraphics.framework */,
+				538C7F5E192980EF0023F428 /* UIKit.framework */,
+				538C7F73192980EF0023F428 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		538C7F60192980EF0023F428 /* iMorse */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F69192980EF0023F428 /* AppDelegate.h */,
+				538C7F6A192980EF0023F428 /* AppDelegate.m */,
+				538C7F89192984DD0023F428 /* HomeViewController.h */,
+				538C7F8A192984DD0023F428 /* HomeViewController.m */,
+				538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */,
+				538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */,
+				538C7F6C192980EF0023F428 /* Images.xcassets */,
+				538C7F61192980EF0023F428 /* Supporting Files */,
+			);
+			path = iMorse;
+			sourceTree = "<group>";
+		};
+		538C7F61192980EF0023F428 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F62192980EF0023F428 /* iMorse-Info.plist */,
+				538C7F63192980EF0023F428 /* InfoPlist.strings */,
+				538C7F66192980EF0023F428 /* main.m */,
+				538C7F68192980EF0023F428 /* iMorse-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		538C7F79192980EF0023F428 /* iMorseTests */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F7F192980EF0023F428 /* iMorseTests.m */,
+				538C7F7A192980EF0023F428 /* Supporting Files */,
+			);
+			path = iMorseTests;
+			sourceTree = "<group>";
+		};
+		538C7F7A192980EF0023F428 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				538C7F7B192980EF0023F428 /* iMorseTests-Info.plist */,
+				538C7F7C192980EF0023F428 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		538C7F56192980EF0023F428 /* iMorse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 538C7F83192980EF0023F428 /* Build configuration list for PBXNativeTarget "iMorse" */;
+			buildPhases = (
+				538C7F53192980EF0023F428 /* Sources */,
+				538C7F54192980EF0023F428 /* Frameworks */,
+				538C7F55192980EF0023F428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMorse;
+			productName = iMorse;
+			productReference = 538C7F57192980EF0023F428 /* iMorse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		538C7F71192980EF0023F428 /* iMorseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 538C7F86192980EF0023F428 /* Build configuration list for PBXNativeTarget "iMorseTests" */;
+			buildPhases = (
+				538C7F6E192980EF0023F428 /* Sources */,
+				538C7F6F192980EF0023F428 /* Frameworks */,
+				538C7F70192980EF0023F428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				538C7F78192980EF0023F428 /* PBXTargetDependency */,
+			);
+			name = iMorseTests;
+			productName = iMorseTests;
+			productReference = 538C7F72192980EF0023F428 /* iMorseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		538C7F4F192980EF0023F428 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Keith Mcclung";
+				TargetAttributes = {
+					538C7F71192980EF0023F428 = {
+						TestTargetID = 538C7F56192980EF0023F428;
+					};
+				};
+			};
+			buildConfigurationList = 538C7F52192980EF0023F428 /* Build configuration list for PBXProject "iMorse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 538C7F4E192980EF0023F428;
+			productRefGroup = 538C7F58192980EF0023F428 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				538C7F56192980EF0023F428 /* iMorse */,
+				538C7F71192980EF0023F428 /* iMorseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		538C7F55192980EF0023F428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F65192980EF0023F428 /* InfoPlist.strings in Resources */,
+				538C7F6D192980EF0023F428 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538C7F70192980EF0023F428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F7E192980EF0023F428 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		538C7F53192980EF0023F428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F6B192980EF0023F428 /* AppDelegate.m in Sources */,
+				538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */,
+				538C7F67192980EF0023F428 /* main.m in Sources */,
+				538C7F8B192984DD0023F428 /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538C7F6E192980EF0023F428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538C7F80192980EF0023F428 /* iMorseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		538C7F78192980EF0023F428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 538C7F56192980EF0023F428 /* iMorse */;
+			targetProxy = 538C7F77192980EF0023F428 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		538C7F63192980EF0023F428 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				538C7F64192980EF0023F428 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		538C7F7C192980EF0023F428 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				538C7F7D192980EF0023F428 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		538C7F81192980EF0023F428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		538C7F82192980EF0023F428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		538C7F84192980EF0023F428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMorse/iMorse-Prefix.pch";
+				INFOPLIST_FILE = "iMorse/iMorse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		538C7F85192980EF0023F428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMorse/iMorse-Prefix.pch";
+				INFOPLIST_FILE = "iMorse/iMorse-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		538C7F87192980EF0023F428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMorse.app/iMorse";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMorse/iMorse-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iMorseTests/iMorseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		538C7F88192980EF0023F428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMorse.app/iMorse";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMorse/iMorse-Prefix.pch";
+				INFOPLIST_FILE = "iMorseTests/iMorseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		538C7F52192980EF0023F428 /* Build configuration list for PBXProject "iMorse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538C7F81192980EF0023F428 /* Debug */,
+				538C7F82192980EF0023F428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		538C7F83192980EF0023F428 /* Build configuration list for PBXNativeTarget "iMorse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538C7F84192980EF0023F428 /* Debug */,
+				538C7F85192980EF0023F428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		538C7F86192980EF0023F428 /* Build configuration list for PBXNativeTarget "iMorseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538C7F87192980EF0023F428 /* Debug */,
+				538C7F88192980EF0023F428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 538C7F4F192980EF0023F428 /* Project object */;
+}
