@@ -21,6 +21,7 @@
 		538C7F80192980EF0023F428 /* iMorseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F7F192980EF0023F428 /* iMorseTests.m */; };
 		538C7F8B192984DD0023F428 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8A192984DD0023F428 /* HomeViewController.m */; };
 		538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */; };
+		58B52B8F192A79B100E0B9BE /* commonString.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B52B8E192A79B100E0B9BE /* commonString.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		538C7F8A192984DD0023F428 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickChatTableViewController.h; sourceTree = "<group>"; };
 		538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickChatTableViewController.m; sourceTree = "<group>"; };
+		58B52B8E192A79B100E0B9BE /* commonString.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commonString.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				538C7F6A192980EF0023F428 /* AppDelegate.m */,
 				538C7F89192984DD0023F428 /* HomeViewController.h */,
 				538C7F8A192984DD0023F428 /* HomeViewController.m */,
+				58B52B8E192A79B100E0B9BE /* commonString.plist */,
 				538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */,
 				538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */,
 				538C7F6C192980EF0023F428 /* Images.xcassets */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B52B8F192A79B100E0B9BE /* commonString.plist in Resources */,
 				538C7F65192980EF0023F428 /* InfoPlist.strings in Resources */,
 				538C7F6D192980EF0023F428 /* Images.xcassets in Resources */,
 			);
@@ -449,6 +453,7 @@
 				538C7F85192980EF0023F428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		538C7F86192980EF0023F428 /* Build configuration list for PBXNativeTarget "iMorseTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +462,7 @@
 				538C7F88192980EF0023F428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

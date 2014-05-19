@@ -234,4 +234,59 @@ NSDictionary\
 Similar to Hash-Maps in Java\
 Unordered collection of Data\
 Key-Value pairing\
-JSON(Javascript Object Notation) looks nearly identical, so dictionaries will be heavily used when we try our hand at networking}
+JSON(Javascript Object Notation) looks nearly identical, so dictionaries will be heavily used when we try our hand at networking\
+\
+DATE 5/16/14\
+\
+http://cl.ly/1J0w1v1D2a1M]\
+\
+\
+NSURLSession\
+New class in iOS7, no need to use NSURLConnection\
+The session is used to manage "tasks" NSURLSessionTask subclasses\
+A task needs a request. NSURLRequest\
+\
+\
+NSURLSessionDownloadTask\
+Content downloaded with this task is temporarily stored on disk\
+Session will give us the local URL where the data is stored\
+The completion handler is all down on another thread.\
+\
+Block Syntax\
+One of the parameters to a function can be a block of code\
+The block may also be saved to a variable, if the block should be called in multiple places\
+\
+JSON Parsing\
+iOS5 added this capability into foundation No need to use a 3rd party library\
+NSJSONSerialization will turn JSON into an NSDictionary.\
+Parse the needed JSON into NSObject subclasses\
+Use the objects to populate a table\
+\
+Categories\
+A way to add new functionality to an existing class\
+Use a category where a subclassing does not make sense\
+ex. a button should almost need be subclassed but adding a category is great\
+\
+Cocoapods\
+sometimes you don't want to reinvent the wheel, and you shouldn't have to\
+Cocoapods is a command line utility written in ruby to add 3rd-party code into your app.\
+sudo gem install cocoapods\
+\
+find a package you want to use\
+copy to clipboard\
+create a pod file\
+paste contents of clipboard into podfile\
+pod install\
+\
+DATE 5/19/14\
+\
+Resources\
+nshipster.com\
+objc.io\
+firebase\
+Parse\
+\
+we wish UIIMageView had a way to asynchronously download images, given a URL\
+UITableViewCell's imageView property is read-only, so unless we make our own cell subclass, we are stuck with UIImageView\
+let's use a pod that includes this functionality, SDWebImage\
+}

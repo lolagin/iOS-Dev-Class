@@ -8,6 +8,7 @@
 
 #import "PostTableViewController.h"
 #import "RedditPost.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PostTableViewController ()
 @property (nonatomic,strong) NSArray *postArray;
@@ -54,6 +55,7 @@
             RedditPost *newPost = [[RedditPost alloc]init];
             newPost.title = [postDict valueForKeyPath:@"data.title"];
             [mutArray addObject:newPost];
+            newPost.imageURL = [NSURL URLWithString:[postDict valueForKeyPath:@"data.url"]];
         }
         
         self.postArray = [NSArray arrayWithArray:mutArray];
@@ -91,6 +93,7 @@
     
     
     cell.textLabel.text = post.title;
+    [cell.imageView setImageWithURL:post.imageURL placeholderImage:[UIImage imageNamed:@"reddit-logo"]];
     
     
     return cell;
