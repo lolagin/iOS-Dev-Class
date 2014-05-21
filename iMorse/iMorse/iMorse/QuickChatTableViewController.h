@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuickChatTableViewController : UITableViewController
+@interface QuickChatTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic,strong) NSMutableArray *stringArray;
+
 
 @end

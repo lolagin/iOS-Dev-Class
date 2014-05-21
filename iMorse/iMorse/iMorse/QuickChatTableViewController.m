@@ -7,9 +7,10 @@
 //
 
 #import "QuickChatTableViewController.h"
+#import "PListData.h"
+#import "HomeViewController.h"
 
 @interface QuickChatTableViewController ()
-@property (nonatomic,strong) NSMutableArray *stringArray;
 
 @end
 
@@ -28,6 +29,13 @@
 {
     [super viewDidLoad];
     
+    PListData *p = [[PListData alloc] init];
+    [p getInformation];
+    
+    self.stringArray = [[NSMutableArray alloc]initWithArray:p.information];
+    
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,15 +52,27 @@
     return [self.stringArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"plistdata"];
     
     // Configure the cell...
+    if(!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"plistdata"];
+    }
+    
+    cell.textLabel.text = self.stringArray[indexPath.row];
     
     return cell;
-}*/
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(self.stringArray[indexPath.row]);
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 

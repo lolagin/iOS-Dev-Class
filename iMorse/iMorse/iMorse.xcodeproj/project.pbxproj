@@ -21,6 +21,7 @@
 		538C7F80192980EF0023F428 /* iMorseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F7F192980EF0023F428 /* iMorseTests.m */; };
 		538C7F8B192984DD0023F428 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8A192984DD0023F428 /* HomeViewController.m */; };
 		538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */; };
+		53B1EA90192ACAF000DA8D16 /* PListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1EA8F192ACAF000DA8D16 /* PListData.m */; };
 		58B52B8F192A79B100E0B9BE /* commonString.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B52B8E192A79B100E0B9BE /* commonString.plist */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		538C7F8A192984DD0023F428 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickChatTableViewController.h; sourceTree = "<group>"; };
 		538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickChatTableViewController.m; sourceTree = "<group>"; };
+		53B1EA8E192ACAF000DA8D16 /* PListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PListData.h; sourceTree = "<group>"; };
+		53B1EA8F192ACAF000DA8D16 /* PListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListData.m; sourceTree = "<group>"; };
 		58B52B8E192A79B100E0B9BE /* commonString.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commonString.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,9 +122,10 @@
 				538C7F6A192980EF0023F428 /* AppDelegate.m */,
 				538C7F89192984DD0023F428 /* HomeViewController.h */,
 				538C7F8A192984DD0023F428 /* HomeViewController.m */,
-				58B52B8E192A79B100E0B9BE /* commonString.plist */,
 				538C7F8C192987AC0023F428 /* QuickChatTableViewController.h */,
 				538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */,
+				53B1EA8E192ACAF000DA8D16 /* PListData.h */,
+				53B1EA8F192ACAF000DA8D16 /* PListData.m */,
 				538C7F6C192980EF0023F428 /* Images.xcassets */,
 				538C7F61192980EF0023F428 /* Supporting Files */,
 			);
@@ -131,6 +135,7 @@
 		538C7F61192980EF0023F428 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58B52B8E192A79B100E0B9BE /* commonString.plist */,
 				538C7F62192980EF0023F428 /* iMorse-Info.plist */,
 				538C7F63192980EF0023F428 /* InfoPlist.strings */,
 				538C7F66192980EF0023F428 /* main.m */,
@@ -256,6 +261,7 @@
 				538C7F6B192980EF0023F428 /* AppDelegate.m in Sources */,
 				538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */,
 				538C7F67192980EF0023F428 /* main.m in Sources */,
+				53B1EA90192ACAF000DA8D16 /* PListData.m in Sources */,
 				538C7F8B192984DD0023F428 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

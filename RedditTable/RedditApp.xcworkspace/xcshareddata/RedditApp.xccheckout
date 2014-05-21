@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D3A039E4-2EB5-45DE-9B45-2DB5F5416DA9</string>
+	<string>4A382EA3-911A-4E4E-A846-AC7A7774E2C3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>RedditApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
-		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+		<key>A517E7AE-4163-409B-9251-9B54C1769F86</key>
+		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>RedditTable/RedditApp.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
+		<key>A517E7AE-4163-409B-9251-9B54C1769F86</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+	<string>A517E7AE-4163-409B-9251-9B54C1769F86</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+			<string>A517E7AE-4163-409B-9251-9B54C1769F86</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS-Dev-Class</string>
+			<string>iOS-Development</string>
 		</dict>
 	</array>
 </dict>

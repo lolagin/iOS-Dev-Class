@@ -10,13 +10,14 @@
 #import "QuickChatTableViewController.h"
 
 @interface HomeViewController ()
-@property (nonatomic,strong) UITextField *textField;
 @property (nonatomic,strong) UIButton *sendButton;
 @property (nonatomic,strong) UIButton *favoritesButton;
+@property (nonatomic,strong) NSDictionary *morse;
 
 @end
 
 @implementation HomeViewController
+
 
 
 - (void)viewDidLoad
@@ -44,6 +45,8 @@
     [self.sendButton sizeToFit];
     self.sendButton.center = CGPointMake(280, 425);
     [self.sendButton addTarget:self action:@selector(parseString) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.morse = [NSDictionary dictionaryWithObjectsAndKeys:<#(id), ...#>, nil]
     
 }
 
@@ -106,8 +109,8 @@
 -(void)parseString
 {
     NSString *myString = self.textField.text;
+    
     NSLog(myString);
-    self.textField.text = @"";
 }
 //This is called when the app goes into the background.
 //We must reset the responder because animations will not be saved

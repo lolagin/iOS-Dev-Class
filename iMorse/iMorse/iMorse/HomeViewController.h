@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController<UITextFieldDelegate>
+@property (nonatomic,strong) UITextField *textField;
+
 
 @end
