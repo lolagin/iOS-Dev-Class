@@ -46,8 +46,10 @@
     self.sendButton.center = CGPointMake(280, 425);
     [self.sendButton addTarget:self action:@selector(parseString) forControlEvents:UIControlEventTouchUpInside];
     
-    self.morse = [NSDictionary dictionaryWithObjectsAndKeys:<#(id), ...#>, nil]
+    NSArray *keyArray = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@" "];
     
+    NSArray *morseArray =@[@".-",@"-...",@"-.-.",@"-..",@".",@"..-.",@"--.",@"....",@"..",@".---",@"-.-",@".-..",@"--",@"-.",@"---",@".--.",@"--.-",@".-.",@"...",@"-",@"..-",@"...-",@".--",@"-..-",@"-.--",@"--..",@"00000"];
+    self.morse = [NSDictionary dictionaryWithObjects:morseArray forKeys:keyArray];
 }
 
 -(void)addTextField
@@ -103,15 +105,48 @@
 }
 -(void)favoriteSelector
 {
-    [self.navigationController pushViewController:[[QuickChatTableViewController alloc] init] animated:YES];
+    QuickChatTableViewController *favoriteView = [[QuickChatTableViewController alloc] init];
+    favoriteView.controllerRef = self;
+    [self.navigationController pushViewController:favoriteView animated:YES];
 
 }
 -(void)parseString
 {
     NSString *myString = self.textField.text;
     
-    NSLog(myString);
+    for(int i = 0; i<myString.length;i++)
+    {
+        NSString *singleChar = [myString substringWithRange:NSMakeRange(i,1)];
+        //[self parseMorse:singleChar];
+        
+        NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morse objectForKey:[singleChar uppercaseString]]);
+    }
+    
 }
+/*-(void)parseMorse: (NSString *)morseString
+{
+    for(int i=0; i<morseString.length;i++)
+    {
+        if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"-"])
+        {
+            //[self cameraFlash:1];
+        }
+        else if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."])
+        {
+            
+        }
+        else
+        {
+            //pause for 5 units
+        }
+
+        
+    }
+}
+-(void)cameraFlash: (int *)flashLength
+{
+    
+}*/
 //This is called when the app goes into the background.
 //We must reset the responder because animations will not be saved
 - (void)appEnteredBackground

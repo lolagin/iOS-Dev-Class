@@ -8,7 +8,6 @@
 
 #import "QuickChatTableViewController.h"
 #import "PListData.h"
-#import "HomeViewController.h"
 
 @interface QuickChatTableViewController ()
 
@@ -70,7 +69,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(self.stringArray[indexPath.row]);
+    //NSLog(self.stringArray[indexPath.row]);
+    self.controllerRef.textField.text = self.stringArray[indexPath.row];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

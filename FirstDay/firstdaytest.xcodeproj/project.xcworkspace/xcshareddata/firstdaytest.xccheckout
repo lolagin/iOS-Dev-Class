@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>92F60107-1793-4D01-9247-182B37B31554</string>
+	<string>05911509-9931-459D-8282-6A1EF06CF19C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RedditApp</string>
+	<string>firstdaytest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
 		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RedditTable/RedditApp.xcworkspace</string>
+	<string>FirstDay/firstdaytest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
