@@ -10,6 +10,7 @@
 #import "PListData.h"
 
 @interface QuickChatTableViewController ()
+@property (nonatomic,strong) PListData *p;
 
 @end
 
@@ -28,10 +29,12 @@
 {
     [super viewDidLoad];
     
-    PListData *p = [[PListData alloc] init];
-    [p getInformation];
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFavorite)];
+    self.navigationItem.rightBarButtonItem = addItem;
+    self.p = [[PListData alloc] init];
+    [self.p getInformation];
     
-    self.stringArray = [[NSMutableArray alloc]initWithArray:p.information];
+    self.stringArray = [[NSMutableArray alloc]initWithArray:self.p.information];
     
     
     
@@ -73,6 +76,37 @@
     self.controllerRef.textField.text = self.stringArray[indexPath.row];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+-(void)addFavorite
+{
+    UIAlertView *enterFav = [[UIAlertView alloc] initWithTitle:@"New Favorite" message:@"Enter your phrase here" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add",nil];
+
+    
+    enterFav.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [enterFav show];
+}
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex ==0);
+    {
+        NSLog(@"Cancelled");
+    }
+    if(buttonIndex == 1)
+    {
+        NSLog(@"Selected Add");
+        UITextField *alertText = [alertView textFieldAtIndex:0];
+        [self.stringArray addObject:alertText.text];
+        for(int i = 0;i<self.stringArray.count;i++)
+        {
+            NSLog(@"Element at %d is %@",i,self.stringArray[i]);
+        }
+        [self.tableView reloadData];
+
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
+        [self.stringArray writeToFile:path atomically:YES];
+
+    }
+}
+
 
 
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
 
-@interface QuickChatTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface QuickChatTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 @property (nonatomic,strong) NSMutableArray *stringArray;
 
 @property (nonatomic,weak) HomeViewController *controllerRef;

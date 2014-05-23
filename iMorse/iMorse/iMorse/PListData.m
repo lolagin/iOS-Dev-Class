@@ -8,13 +8,26 @@
 
 #import "PListData.h"
 
+
+
 @implementation PListData
+
 
 -(void) getInformation
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
-    self.information = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    [self getPath];
+    self.information = [[NSMutableArray alloc] initWithContentsOfFile:self.path];
 
+}
+-(void) getPath
+{
+    self.path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
+
+}
+-(void) writeInformation: (NSMutableArray *) myArray
+{
+    [self getPath];
+    [myArray writeToFile:self.path atomically:YES];
 }
 
 @end

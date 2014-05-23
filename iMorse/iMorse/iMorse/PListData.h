@@ -10,6 +10,7 @@
 
 @interface PListData : NSObject
 @property (nonatomic, strong) NSMutableArray *information;
+@property (nonatomic,strong) NSString *path;
 
 -(void)getInformation;
 

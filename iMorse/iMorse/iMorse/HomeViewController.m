@@ -117,36 +117,38 @@
     for(int i = 0; i<myString.length;i++)
     {
         NSString *singleChar = [myString substringWithRange:NSMakeRange(i,1)];
-        //[self parseMorse:singleChar];
+        [self parseMorse:singleChar];
         
         NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morse objectForKey:[singleChar uppercaseString]]);
     }
     
 }
-/*-(void)parseMorse: (NSString *)morseString
+-(void)parseMorse: (NSString *)morseString
 {
     for(int i=0; i<morseString.length;i++)
     {
         if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"-"])
         {
-            //[self cameraFlash:1];
+            [self cameraFlash:3];
+            //pause for 1 unit
         }
         else if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."])
         {
-            
+            [self cameraFlash:1];
         }
         else
         {
-            //pause for 5 units
+            //pause for 4 units
         }
 
         
     }
 }
--(void)cameraFlash: (int *)flashLength
+
+-(void)cameraFlash: (int)flashLength
 {
     
-}*/
+}
 //This is called when the app goes into the background.
 //We must reset the responder because animations will not be saved
 - (void)appEnteredBackground
