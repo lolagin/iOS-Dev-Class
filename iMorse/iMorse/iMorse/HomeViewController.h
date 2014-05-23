@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface HomeViewController : UIViewController<UITextFieldDelegate>
+{
+    AVCaptureSession *torchSession;
+}
 @property (nonatomic,strong) UITextField *textField;
+@property (nonatomic,strong) AVCaptureSession *torchSession;
 
 
 @end

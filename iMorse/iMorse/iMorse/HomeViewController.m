@@ -18,6 +18,8 @@
 
 @implementation HomeViewController
 
+@synthesize torchSession;
+
 
 
 - (void)viewDidLoad
@@ -147,7 +149,29 @@
 
 -(void)cameraFlash: (int)flashLength
 {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
+    if([device hasTorch]&&[device hasFlash])
+    {
+        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
+        AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
+        
+        AVCaptureSession *session = [[AVCaptureSession alloc] init];
+        
+        [session beginConfiguration];
+        [device lockForConfiguration:nil];
+        
+        [device setTorchMode:AVCaptureTorchModeOn];
+        
+        [session addInput:input];
+        [session addOutput:output];
+        
+        [device unlockForConfiguration];
+        [session startRunning];
+        
+        [self setTorchSession:session];
+        
+    }
 }
 //This is called when the app goes into the background.
 //We must reset the responder because animations will not be saved
