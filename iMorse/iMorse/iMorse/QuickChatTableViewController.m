@@ -103,6 +103,9 @@
 
         NSString *path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
         [self.stringArray writeToFile:path atomically:YES];
+        
+        //on app launch (one time), copy the plist into the Documents directory
+        //have all of your code deal with the Documents directory.
 
     }
 }

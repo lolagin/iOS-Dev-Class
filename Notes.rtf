@@ -290,7 +290,16 @@ we wish UIIMageView had a way to asynchronously download images, given a URL\
 UITableViewCell's imageView property is read-only, so unless we make our own cell subclass, we are stuck with UIImageView\
 let's use a pod that includes this functionality, SDWebImage\
 \
-DATE 5/21/14\
+DATE 5/28/14\
+\
+xCode plugins\
+alcatraz\
+\
+UIAppearance\
+A way to modify the "blueprint" used to build objects\
+Header file -UI_Appearence_Selector\
+[[UINavigationBar appearance] setTintColor:myColor];\
+[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class],nil]setTintColor:myNavBarColor];\
 \
 \
 }

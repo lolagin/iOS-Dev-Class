@@ -1,30 +1,20 @@
 //
 //  AppDelegate.m
-//  iMorse
+//  Appearance
 //
-//  Created by Keith McClung on 5/18/14.
-//  Copyright (c) 2014 Keith Mcclung. All rights reserved.
+//  Created by Keith McClung on 5/28/14.
+//  Copyright (c) 2014 Keith McClung. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //NSUserDefaults
-    if([[NSUserDefaults standardUserDefaults] objectForKey:@"RUN_ONCE"] == nil)
-    {
-        //copy the bundle file into the documents directory
-        [[NSUserDefaults standardUserDefaults] setObject:@"DONE" forKey:@"RUN_ONCE"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[HomeViewController alloc]init]];
     [self.window makeKeyAndVisible];
     return YES;
 }

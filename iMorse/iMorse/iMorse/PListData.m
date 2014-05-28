@@ -24,10 +24,5 @@
     self.path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
 
 }
--(void) writeInformation: (NSMutableArray *) myArray
-{
-    [self getPath];
-    [myArray writeToFile:self.path atomically:YES];
-}
 
 @end

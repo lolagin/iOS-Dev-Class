@@ -19,6 +19,8 @@
 
 @implementation HomeViewController
 
+double timeUnit = 1.0;
+
 @synthesize torchSession;
 
 
@@ -37,7 +39,7 @@
     [self.favoritesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.favoritesButton];
     [self.favoritesButton sizeToFit];
-    self.favoritesButton.center = CGPointMake(52, 425);
+    self.favoritesButton.center = CGPointMake(52, 225);
     [self.favoritesButton addTarget:self action:@selector(favoriteSelector) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -46,19 +48,19 @@
     [self.sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.sendButton];
     [self.sendButton sizeToFit];
-    self.sendButton.center = CGPointMake(280, 425);
+    self.sendButton.center = CGPointMake(280, 225);
     [self.sendButton addTarget:self action:@selector(parseString) forControlEvents:UIControlEventTouchUpInside];
     
     NSArray *keyArray = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@" "];
     
-    NSArray *morseArray =@[@".-",@"-...",@"-.-.",@"-..",@".",@"..-.",@"--.",@"....",@"..",@".---",@"-.-",@".-..",@"--",@"-.",@"---",@".--.",@"--.-",@".-.",@"...",@"-",@"..-",@"...-",@".--",@"-..-",@"-.--",@"--..",@"00000"];
+    NSArray *morseArray =@[@".-",@"-...",@"-.-.",@"-..",@".",@"..-.",@"--.",@"....",@"..",@".---",@"-.-",@".-..",@"--",@"-.",@"---",@".--.",@"--.-",@".-.",@"...",@"-",@"..-",@"...-",@".--",@"-..-",@"-.--",@"--..",@"0"];
     self.morseDict = [NSDictionary dictionaryWithObjects:morseArray forKeys:keyArray];
 }
 
 -(void)addTextField
 {
     //allocates text field and sets its frame
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake( 20,440, 280, 30)];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake( 20,240, 280, 30)];
     //sets border style fo textField and font size
     self.textField.borderStyle = UITextBorderStyleRoundedRect;
     self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -75,7 +77,7 @@
 -(void)animateTextField: (UITextField*)textField up: (BOOL) up
 {
     //distance of slide aka keyboard height
-    const int movementDistance = 215;  //modify as needed
+    const int movementDistance = 20;  //modify as needed
     const float movementDuration = 0.3f;  //modify as needed
     
     int movement = (up ? -movementDistance : movementDistance);
@@ -129,34 +131,45 @@
 }
 -(void)parseMorse: (NSString *)morseString
 {
-    NSTimer *delay;
+    //NSTimer *delay;
     for(int i=0; i<morseString.length;i++)
     {
         if([[morseString substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"-"])
         {
             NSLog(@"Sent dash");
-            delay = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
+            
+            [NSThread sleepForTimeInterval:timeUnit];
+            [self flashOn:[NSNumber numberWithInt:3]];
+            //[self performSelector:@selector(flashOn:) withObject:[NSNumber numberWithInt:3] afterDelay:timeUnit];
+            //delay = [NSTimer scheduledTimerWithTimeInterval:timeUnit target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
         }
         else if([[morseString substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"."])
         {
             NSLog(@"Sent dot");
-            delay = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
+            [NSThread sleepForTimeInterval:timeUnit];
+            [self flashOn:[NSNumber numberWithInt:1]];
+            //[self performSelector:@selector(flashOn:) withObject:[NSNumber numberWithInt:1] afterDelay:timeUnit];
+            //delay = [NSTimer scheduledTimerWithTimeInterval:timeUnit target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
         }
         else
         {
             NSLog(@"Sent Space");
-            delay = [NSTimer scheduledTimerWithTimeInterval:(.2*4) target:self selector:@selector(doNothing) userInfo:nil repeats:NO];
+            [NSThread sleepForTimeInterval:timeUnit*4];
+            //[self performSelector:@selector(doNothing) withObject:nil afterDelay:(timeUnit*4)];
+            //delay = [NSTimer scheduledTimerWithTimeInterval:(timeUnit*4) target:self selector:@selector(doNothing) userInfo:nil repeats:NO];
         }
 
         
     }
 }
 
--(void)flashOn: (int)flashLength
+-(void)flashOn: (NSNumber *)_flashLength
 {
-    NSTimer *flashTime;
+    int flashLength = [_flashLength intValue];
+    //NSTimer *flashTime;
     
     self.cameraFlash = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSLog(@"Entered FlashOn");
     
     if([self.cameraFlash hasTorch]&&[self.cameraFlash hasFlash])
     {
@@ -179,7 +192,9 @@
         
         [self setTorchSession:session];
         
-        flashTime = [NSTimer scheduledTimerWithTimeInterval:(0.2*flashLength) target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
+        [NSThread sleepForTimeInterval:timeUnit*flashLength];
+        //[self performSelector:@selector(flashOff) withObject:self afterDelay:(timeUnit*flashLength)];
+        //flashTime = [NSTimer scheduledTimerWithTimeInterval:(timeUnit*flashLength) target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
         NSLog(@"Flash On for %d units",flashLength);
         
     }
