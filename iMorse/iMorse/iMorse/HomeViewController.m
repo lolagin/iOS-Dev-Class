@@ -12,7 +12,8 @@
 @interface HomeViewController ()
 @property (nonatomic,strong) UIButton *sendButton;
 @property (nonatomic,strong) UIButton *favoritesButton;
-@property (nonatomic,strong) NSDictionary *morse;
+@property (nonatomic,strong) NSDictionary *morseDict;
+@property (nonatomic,strong) AVCaptureDevice *cameraFlash;
 
 @end
 
@@ -51,7 +52,7 @@
     NSArray *keyArray = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@" "];
     
     NSArray *morseArray =@[@".-",@"-...",@"-.-.",@"-..",@".",@"..-.",@"--.",@"....",@"..",@".---",@"-.-",@".-..",@"--",@"-.",@"---",@".--.",@"--.-",@".-.",@"...",@"-",@"..-",@"...-",@".--",@"-..-",@"-.--",@"--..",@"00000"];
-    self.morse = [NSDictionary dictionaryWithObjects:morseArray forKeys:keyArray];
+    self.morseDict = [NSDictionary dictionaryWithObjects:morseArray forKeys:keyArray];
 }
 
 -(void)addTextField
@@ -119,59 +120,80 @@
     for(int i = 0; i<myString.length;i++)
     {
         NSString *singleChar = [myString substringWithRange:NSMakeRange(i,1)];
-        [self parseMorse:singleChar];
+        NSString *morseChar = [self.morseDict objectForKey:[singleChar uppercaseString]];
+        [self parseMorse:morseChar];
         
-        NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morse objectForKey:[singleChar uppercaseString]]);
+        NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morseDict objectForKey:[singleChar uppercaseString]]);
     }
     
 }
 -(void)parseMorse: (NSString *)morseString
 {
+    NSTimer *delay;
     for(int i=0; i<morseString.length;i++)
     {
-        if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"-"])
+        if([[morseString substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"-"])
         {
-            [self cameraFlash:3];
-            //pause for 1 unit
+            NSLog(@"Sent dash");
+            delay = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
         }
-        else if([[morseString substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."])
+        else if([[morseString substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"."])
         {
-            [self cameraFlash:1];
+            NSLog(@"Sent dot");
+            delay = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
         }
         else
         {
-            //pause for 4 units
+            NSLog(@"Sent Space");
+            delay = [NSTimer scheduledTimerWithTimeInterval:(.2*4) target:self selector:@selector(doNothing) userInfo:nil repeats:NO];
         }
 
         
     }
 }
 
--(void)cameraFlash: (int)flashLength
+-(void)flashOn: (int)flashLength
 {
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSTimer *flashTime;
     
-    if([device hasTorch]&&[device hasFlash])
+    self.cameraFlash = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    if([self.cameraFlash hasTorch]&&[self.cameraFlash hasFlash])
     {
-        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
-        AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
-        
         AVCaptureSession *session = [[AVCaptureSession alloc] init];
         
-        [session beginConfiguration];
-        [device lockForConfiguration:nil];
-        
-        [device setTorchMode:AVCaptureTorchModeOn];
+        AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.cameraFlash error:nil];
+        AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
         
         [session addInput:input];
         [session addOutput:output];
         
-        [device unlockForConfiguration];
+        [session beginConfiguration];
+        
+        [self.cameraFlash lockForConfiguration:nil];
+        
+        [self.cameraFlash setTorchMode:AVCaptureTorchModeOn];
+        
+        [session commitConfiguration];
         [session startRunning];
         
         [self setTorchSession:session];
         
+        flashTime = [NSTimer scheduledTimerWithTimeInterval:(0.2*flashLength) target:self selector:@selector(flashOff) userInfo:nil repeats:NO];
+        NSLog(@"Flash On for %d units",flashLength);
+        
     }
+}
+-(void)flashOff
+{
+    [self.cameraFlash setTorchMode:AVCaptureTorchModeOff];
+    [self.cameraFlash unlockForConfiguration];
+    [torchSession stopRunning];
+    NSLog(@"Flash OFf");
+}
+-(void)doNothing
+{
+    NSLog(@"pause for space has ended");
 }
 //This is called when the app goes into the background.
 //We must reset the responder because animations will not be saved

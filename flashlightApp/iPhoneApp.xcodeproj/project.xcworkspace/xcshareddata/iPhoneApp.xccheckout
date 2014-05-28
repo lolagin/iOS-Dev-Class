@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A7A0E646-FE6A-4F26-BBE9-FE2C9285391E</string>
+	<string>A88D333A-66CC-4968-BC56-5D0C679E1BC3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iPhoneApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
-		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+		<key>09743C72-C940-47F9-B4B3-A8B6B6F7C4D9</key>
+		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>flashlightApp/iPhoneApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
+		<key>09743C72-C940-47F9-B4B3-A8B6B6F7C4D9</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+	<string>09743C72-C940-47F9-B4B3-A8B6B6F7C4D9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+			<string>09743C72-C940-47F9-B4B3-A8B6B6F7C4D9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS-Dev-Class</string>
+			<string>iOS-Development</string>
 		</dict>
 	</array>
 </dict>

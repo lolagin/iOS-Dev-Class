@@ -86,7 +86,7 @@
 }
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex ==0);
+    if(buttonIndex ==0)
     {
         NSLog(@"Cancelled");
     }
