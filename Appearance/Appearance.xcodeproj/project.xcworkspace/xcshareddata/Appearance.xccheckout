@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A3675DD7-240D-46E8-BC98-41B5A35A1F1E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Appearance</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
+		<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Appearance/Appearance.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/N3v3rsumm3r/iOS-Dev-Class.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E7F811D8-9165-4D22-A8C4-08EA4B15A96A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Dev-Class</string>
+		</dict>
+	</array>
+</dict>
+</plist>
