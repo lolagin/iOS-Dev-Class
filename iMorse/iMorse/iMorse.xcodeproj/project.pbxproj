@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53756BAF1938402900DD257D /* dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 53756BAD1938402900DD257D /* dash.png */; };
-		53756BB01938402900DD257D /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 53756BAE1938402900DD257D /* dot.png */; };
 		538C7F5B192980EF0023F428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5A192980EF0023F428 /* Foundation.framework */; };
 		538C7F5D192980EF0023F428 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5C192980EF0023F428 /* CoreGraphics.framework */; };
 		538C7F5F192980EF0023F428 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C7F5E192980EF0023F428 /* UIKit.framework */; };
@@ -25,6 +23,8 @@
 		538C7F8E192987AC0023F428 /* QuickChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538C7F8D192987AC0023F428 /* QuickChatTableViewController.m */; };
 		53B1EA90192ACAF000DA8D16 /* PListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1EA8F192ACAF000DA8D16 /* PListData.m */; };
 		58B52B8F192A79B100E0B9BE /* commonString.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B52B8E192A79B100E0B9BE /* commonString.plist */; };
+		58F8958F1938EA880051A8EE /* dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F8958D1938EA880051A8EE /* dash.png */; };
+		58F895901938EA880051A8EE /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F8958E1938EA880051A8EE /* dot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		53756BAD1938402900DD257D /* dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dash.png; path = "../../../../Downloads/OneDrive-2014-05-29/dash.png"; sourceTree = "<group>"; };
-		53756BAE1938402900DD257D /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dot.png; path = "../../../../Downloads/OneDrive-2014-05-29/dot.png"; sourceTree = "<group>"; };
 		538C7F57192980EF0023F428 /* iMorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		538C7F5A192980EF0023F428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		538C7F5C192980EF0023F428 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +61,8 @@
 		53B1EA8E192ACAF000DA8D16 /* PListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PListData.h; sourceTree = "<group>"; };
 		53B1EA8F192ACAF000DA8D16 /* PListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListData.m; sourceTree = "<group>"; };
 		58B52B8E192A79B100E0B9BE /* commonString.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commonString.plist; sourceTree = "<group>"; };
+		58F8958D1938EA880051A8EE /* dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dash.png; sourceTree = "<group>"; };
+		58F8958E1938EA880051A8EE /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		538C7F61192980EF0023F428 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				53756BAD1938402900DD257D /* dash.png */,
-				53756BAE1938402900DD257D /* dot.png */,
+				58F8958D1938EA880051A8EE /* dash.png */,
+				58F8958E1938EA880051A8EE /* dot.png */,
 				58B52B8E192A79B100E0B9BE /* commonString.plist */,
 				538C7F62192980EF0023F428 /* iMorse-Info.plist */,
 				538C7F63192980EF0023F428 /* InfoPlist.strings */,
@@ -246,8 +246,8 @@
 				58B52B8F192A79B100E0B9BE /* commonString.plist in Resources */,
 				538C7F65192980EF0023F428 /* InfoPlist.strings in Resources */,
 				538C7F6D192980EF0023F428 /* Images.xcassets in Resources */,
-				53756BB01938402900DD257D /* dot.png in Resources */,
-				53756BAF1938402900DD257D /* dash.png in Resources */,
+				58F895901938EA880051A8EE /* dot.png in Resources */,
+				58F8958F1938EA880051A8EE /* dash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
