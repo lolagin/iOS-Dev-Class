@@ -21,7 +21,10 @@
 }
 -(void) getPath
 {
-    self.path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    self.path = [documentsDirectory stringByAppendingString:@"data.plist"];
+    //self.path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
 
 }
 

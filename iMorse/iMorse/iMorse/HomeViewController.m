@@ -19,7 +19,7 @@
 
 @implementation HomeViewController
 
-double timeUnit = 1.0;
+double timeUnit = 0.3;
 
 @synthesize torchSession;
 
@@ -29,38 +29,52 @@ double timeUnit = 1.0;
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
+    //self.view.backgroundColor = [UIColor blackColor];
     self.title = @"iMorse Home";
-    
+    //calls textField
     [self addTextField];
+    
+    //creates button for "dot" signal
+    UIButton *dotButton = [[UIButton alloc] initWithFrame:CGRectMake(30, 150, 100, 100)];
+    [dotButton setBackgroundImage:[UIImage imageNamed:@"dot.png"] forState:UIControlStateNormal];
+    [dotButton addTarget:self action:@selector(dotBlink) forControlEvents: UIControlEventTouchUpInside];
+    [self.view addSubview:dotButton];
+    
+    //creates button for "dash" signal
+    UIButton *dashButton = [[UIButton alloc] initWithFrame:CGRectMake(190, 150, 100, 100)];
+    [dashButton setBackgroundImage:[UIImage imageNamed:@"dash.png"] forState:UIControlStateNormal];
+    [dashButton addTarget:self action:@selector(dashBlink) forControlEvents: UIControlEventTouchUpInside];
+    [self.view addSubview:dashButton];
 
+    //creates button for favorites menu
     self.favoritesButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.favoritesButton setTitle:@"Favorites" forState:(UIControlStateNormal)];
-    [self.favoritesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //[self.favoritesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.favoritesButton];
     [self.favoritesButton sizeToFit];
-    self.favoritesButton.center = CGPointMake(52, 225);
+    self.favoritesButton.center = CGPointMake(52, 315);
     [self.favoritesButton addTarget:self action:@selector(favoriteSelector) forControlEvents:UIControlEventTouchUpInside];
     
-    
+    //creates button that sends the typed message
     self.sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.sendButton setTitle:@"Send" forState:(UIControlStateNormal)];
-    [self.sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //[self.sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.sendButton];
     [self.sendButton sizeToFit];
-    self.sendButton.center = CGPointMake(280, 225);
+    self.sendButton.center = CGPointMake(280, 315);
     [self.sendButton addTarget:self action:@selector(parseString) forControlEvents:UIControlEventTouchUpInside];
     
     NSArray *keyArray = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@" "];
     
     NSArray *morseArray =@[@".-",@"-...",@"-.-.",@"-..",@".",@"..-.",@"--.",@"....",@"..",@".---",@"-.-",@".-..",@"--",@"-.",@"---",@".--.",@"--.-",@".-.",@"...",@"-",@"..-",@"...-",@".--",@"-..-",@"-.--",@"--..",@"0"];
+    //dictionary that holds the conversion from english to morse
     self.morseDict = [NSDictionary dictionaryWithObjects:morseArray forKeys:keyArray];
 }
 
 -(void)addTextField
 {
     //allocates text field and sets its frame
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake( 20,240, 280, 30)];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake( 20,330, 280, 30)];
     //sets border style fo textField and font size
     self.textField.borderStyle = UITextBorderStyleRoundedRect;
     self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -77,7 +91,7 @@ double timeUnit = 1.0;
 -(void)animateTextField: (UITextField*)textField up: (BOOL) up
 {
     //distance of slide aka keyboard height
-    const int movementDistance = 20;  //modify as needed
+    const int movementDistance = 100;  //modify as needed
     const float movementDuration = 0.3f;  //modify as needed
     
     int movement = (up ? -movementDistance : movementDistance);
@@ -94,13 +108,13 @@ double timeUnit = 1.0;
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self animateTextField:textField up:YES];
-    NSLog(@"Text field did begin editing");
+    //NSLog(@"Text field did begin editing");
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     [self animateTextField:textField up:NO];
-    NSLog(@"Text field did end editing");
+    //NSLog(@"Text field did end editing");
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -108,6 +122,7 @@ double timeUnit = 1.0;
     [textField resignFirstResponder];
     return YES;
 }
+//pushes to favorites view, uses favorite button
 -(void)favoriteSelector
 {
     QuickChatTableViewController *favoriteView = [[QuickChatTableViewController alloc] init];
@@ -115,20 +130,28 @@ double timeUnit = 1.0;
     [self.navigationController pushViewController:favoriteView animated:YES];
 
 }
+//begins parsing string into single characters
 -(void)parseString
 {
-    NSString *myString = self.textField.text;
-    
-    for(int i = 0; i<myString.length;i++)
-    {
-        NSString *singleChar = [myString substringWithRange:NSMakeRange(i,1)];
-        NSString *morseChar = [self.morseDict objectForKey:[singleChar uppercaseString]];
-        [self parseMorse:morseChar];
+    dispatch_queue_t myQueue = dispatch_queue_create("My Queue", NULL);
+    dispatch_async(myQueue, ^{
         
-        NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morseDict objectForKey:[singleChar uppercaseString]]);
-    }
+        NSString *myString = self.textField.text;
     
+        for(int i = 0; i<myString.length;i++)
+        {
+            NSString *singleChar = [myString substringWithRange:NSMakeRange(i,1)];
+            NSString *morseChar = [self.morseDict objectForKey:[singleChar uppercaseString]];
+            [self parseMorse:morseChar];
+        
+            NSLog(@"Morse Signal for %@ is %@",singleChar,[self.morseDict objectForKey:[singleChar uppercaseString]]);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+        
+        });
+    });
 }
+//parses each morse signal into the proper flashes
 -(void)parseMorse: (NSString *)morseString
 {
     //NSTimer *delay;
@@ -162,7 +185,17 @@ double timeUnit = 1.0;
         
     }
 }
-
+//forces single flash for "dash" signal
+-(void)dashBlink
+{
+    [self flashOn:[NSNumber numberWithInteger:3]];
+}
+//forces single flash for "dot" signal
+-(void)dotBlink
+{
+    [self flashOn:[NSNumber numberWithInteger:1]];
+}
+//turns on flash and then stalls for how long the signal should be
 -(void)flashOn: (NSNumber *)_flashLength
 {
     int flashLength = [_flashLength intValue];
@@ -171,6 +204,7 @@ double timeUnit = 1.0;
     self.cameraFlash = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSLog(@"Entered FlashOn");
     
+    //only enteres if there is a camera with a flash
     if([self.cameraFlash hasTorch]&&[self.cameraFlash hasFlash])
     {
         AVCaptureSession *session = [[AVCaptureSession alloc] init];
@@ -199,6 +233,7 @@ double timeUnit = 1.0;
         
     }
 }
+//turns off the flash
 -(void)flashOff
 {
     [self.cameraFlash setTorchMode:AVCaptureTorchModeOff];
@@ -206,6 +241,7 @@ double timeUnit = 1.0;
     [torchSession stopRunning];
     NSLog(@"Flash OFf");
 }
+//end of space pause
 -(void)doNothing
 {
     NSLog(@"pause for space has ended");

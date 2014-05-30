@@ -101,7 +101,10 @@
         }
         [self.tableView reloadData];
 
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingString:@"data.plist"];
+        //NSString *path = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
         [self.stringArray writeToFile:path atomically:YES];
         
         //on app launch (one time), copy the plist into the Documents directory

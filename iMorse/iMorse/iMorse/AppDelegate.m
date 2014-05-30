@@ -17,8 +17,22 @@
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"RUN_ONCE"] == nil)
     {
         //copy the bundle file into the documents directory
+        NSError *error;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingString:@"data.plist"];
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if(![fileManager fileExistsAtPath:path])
+        {
+            NSString *bundle = [[NSBundle mainBundle] pathForResource:@"commonString" ofType:@"plist"];
+            [fileManager copyItemAtPath:bundle toPath:path error:&error];
+        }
+        
+        
         [[NSUserDefaults standardUserDefaults] setObject:@"DONE" forKey:@"RUN_ONCE"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(@"Run Once function ran");
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
